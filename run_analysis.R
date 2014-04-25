@@ -43,11 +43,11 @@ mean_std_data <- cbind(extr_X, subject, y)
 melted <- melt(mean_std_data, (is.vars=c("activity.Labels", "subject")))
 tidy <- dcast(melted, activity.Labels + subject ~ variable, mean)
 
-# Remove previus data from the environment
+# Clear the environment from unused data
 rm(X_train); rm(X_test);
 rm(subject_train); rm(subject_test);
 rm(y_train); rm(y_test);
-rm(actLabels);
+rm(actLabels); rm(is.vars);
 rm(X); rm(subject); rm(y);
 rm(extr_X); rm(melted);
 
